@@ -6,5 +6,6 @@
 - Root Dockerfile (FrankenPHP php8.3, composer --no-dev), root railway.json (DOCKERFILE builder, preDeploy migrate+seed, healthcheck /up), .dockerignore.
 - Verified locally: composer build, migrate, seed, optimize, FrankenPHP serve, /up 200, login POST → dashboard 200.
 - login.blade.php: brand + footer wrapped in max-w-[560px] mx-auto (all at same x).
+- Fix 2: GitHub push drops composer.lock & .env.example → Dockerfile no longer COPYs composer.lock; composer install resolves from composer.json. Verified with fresh clone of user's repo.
 ## Backlog
 - Real .xlsx export; Railway volume for uploads.

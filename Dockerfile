@@ -6,11 +6,9 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
-COPY esakip/composer.json esakip/composer.lock ./
-RUN composer install --no-dev --no-scripts --no-autoloader --no-interaction --prefer-dist
-
 COPY esakip/ ./
-RUN composer dump-autoload --optimize --no-dev \
+RUN composer install --no-dev --no-scripts --optimize-autoloader --no-interaction --prefer-dist \
+    && php artisan package:discover --ansi \
     && mkdir -p storage/app/public storage/app/private storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
 
