@@ -26,51 +26,51 @@
             <img src="{{ asset('img/torus.png') }}" alt="" class="absolute right-[4%] bottom-[4%] w-44 lg:w-60 float-c drop-shadow-2xl" style="--r:12deg">
 
             <div class="absolute inset-0 flex items-center justify-center p-8">
-                <div class="relative w-full max-w-[520px] h-[480px] hidden lg:block">
+                <div class="relative w-full max-w-[620px] h-[560px] hidden lg:block">
                     {{-- main card --}}
-                    <div class="absolute left-[6%] top-[14%] w-[66%] bg-white rounded-[26px] p-3 shadow-2xl float-a" style="--r:-3deg">
-                        <div class="rounded-[20px] bg-gradient-to-br from-brand-500 via-brand-600 to-brand-900 h-40 p-4 relative overflow-hidden">
-                            <span class="absolute -right-6 -top-6 w-28 h-28 rounded-full border-[14px] border-white/15"></span>
-                            <span class="badge bg-white/90 text-ink ring-white">Triwulan II · 2026</span>
-                            <p class="font-display text-white text-4xl font-bold mt-6 num">92,4<span class="text-xl">%</span></p>
-                            <p class="text-white/80 text-xs">Rata-rata capaian kinerja</p>
+                    <div class="absolute left-[4%] top-[14%] w-[66%] bg-white rounded-[28px] p-3.5 shadow-2xl float-a" style="--r:-3deg">
+                        <div class="rounded-[22px] bg-gradient-to-br from-brand-500 via-brand-600 to-brand-900 h-48 p-5 relative overflow-hidden">
+                            <span class="absolute -right-6 -top-6 w-32 h-32 rounded-full border-[16px] border-white/15"></span>
+                            <span class="badge bg-white/90 text-ink ring-white !text-sm !px-3.5 !py-1.5">Triwulan II · 2026</span>
+                            <p class="font-display text-white text-6xl font-bold mt-5 num">92,4<span class="text-3xl">%</span></p>
+                            <p class="text-white/85 text-base mt-1">Rata-rata capaian kinerja</p>
                         </div>
-                        <p class="font-display text-[15px] font-bold mt-3 px-1">CAPAIAN KINERJA OPD</p>
-                        <div class="flex items-center gap-4 text-[11px] text-slate-500 px-1 mt-1.5 pb-1">
-                            <span class="inline-flex items-center gap-1"><i data-lucide="target" class="w-3 h-3"></i>26 Indikator</span>
-                            <span class="inline-flex items-center gap-1"><i data-lucide="building-2" class="w-3 h-3"></i>9 OPD</span>
+                        <p class="font-display text-xl font-bold mt-4 px-1.5">CAPAIAN KINERJA OPD</p>
+                        <div class="flex items-center gap-5 text-sm text-slate-500 px-1.5 mt-2 pb-1.5">
+                            <span class="inline-flex items-center gap-1.5"><i data-lucide="target" class="w-4 h-4"></i>26 Indikator</span>
+                            <span class="inline-flex items-center gap-1.5"><i data-lucide="building-2" class="w-4 h-4"></i>9 OPD</span>
                         </div>
                     </div>
                     {{-- revenue-like card --}}
-                    <div class="absolute right-0 top-0 w-[52%] bg-white rounded-[20px] p-4 shadow-2xl float-b" style="--r:2deg">
-                        <p class="text-xs font-semibold">Predikat SAKIP</p>
-                        <p class="text-[10px] text-slate-400">Evaluasi 2025</p>
-                        <div class="flex items-end justify-between mt-2">
-                            <p class="font-display text-3xl font-bold">BB</p>
-                            <span class="badge bg-ink text-emerald-300 ring-ink">+2,1 poin</span>
+                    <div class="absolute right-0 top-0 w-[52%] bg-white rounded-[22px] p-5 shadow-2xl float-b" style="--r:2deg">
+                        <p class="text-base font-semibold">Predikat SAKIP</p>
+                        <p class="text-xs text-slate-400">Evaluasi 2025</p>
+                        <div class="flex items-end justify-between mt-3">
+                            <p class="font-display text-5xl font-bold">BB</p>
+                            <span class="badge bg-ink text-emerald-300 ring-ink !text-sm !px-3.5 !py-1.5">+2,1 poin</span>
                         </div>
-                        <div class="bar sm mt-3"><div class="bar-fill moving bg-brand-600" style="width:72%"></div></div>
+                        <div class="bar mt-4 !h-3"><div class="bar-fill moving bg-brand-600" style="width:72%"></div></div>
                     </div>
                     {{-- students-like card --}}
-                    <div class="absolute left-0 bottom-[4%] w-[56%] bg-brand-600 rounded-[20px] p-4 shadow-2xl text-white float-c" style="--r:-2deg">
-                        <p class="text-sm font-semibold">OPD Terhubung</p>
-                        <p class="text-[10px] text-white/75">Cascading RPJMD → Kegiatan</p>
-                        <div class="flex items-center mt-3">
+                    <div class="absolute left-0 bottom-[4%] w-[56%] bg-brand-600 rounded-[22px] p-5 shadow-2xl text-white float-c" style="--r:-2deg">
+                        <p class="text-lg font-semibold">OPD Terhubung</p>
+                        <p class="text-xs text-white/80">Cascading RPJMD → Kegiatan</p>
+                        <div class="flex items-center mt-4">
                             @foreach (['DK', 'DP', 'PU', 'DS', 'KI'] as $k => $i)
-                                <span class="w-8 h-8 rounded-full ring-2 ring-brand-600 grid place-items-center text-[10px] font-bold {{ ['bg-white text-ink', 'bg-amber-300 text-ink', 'bg-sky-300 text-ink', 'bg-emerald-300 text-ink', 'bg-ink text-white'][$k] }} {{ $k ? '-ml-2' : '' }}">{{ $i }}</span>
+                                <span class="w-11 h-11 rounded-full ring-2 ring-brand-600 grid place-items-center text-xs font-bold {{ ['bg-white text-ink', 'bg-amber-300 text-ink', 'bg-sky-300 text-ink', 'bg-emerald-300 text-ink', 'bg-ink text-white'][$k] }} {{ $k ? '-ml-2.5' : '' }}">{{ $i }}</span>
                             @endforeach
-                            <span class="w-9 h-9 -ml-2 rounded-full bg-white text-ink grid place-items-center text-[11px] font-bold">9+</span>
+                            <span class="w-11 h-11 -ml-2.5 rounded-full bg-white text-ink grid place-items-center text-sm font-bold">9+</span>
                         </div>
                     </div>
                     {{-- small status --}}
-                    <div class="absolute right-[2%] bottom-[16%] w-[44%] bg-white rounded-[20px] p-4 shadow-2xl float-a">
-                        <div class="flex items-center justify-between">
-                            <p class="text-xs font-semibold">Renstra OPD</p>
-                            <span class="badge bg-red-600 text-white ring-red-600">Ditetapkan</span>
+                    <div class="absolute right-[1%] bottom-[16%] w-[44%] bg-white rounded-[22px] p-5 shadow-2xl float-a">
+                        <div class="flex items-center justify-between gap-2">
+                            <p class="text-base font-semibold">Renstra OPD</p>
+                            <span class="badge bg-red-600 text-white ring-red-600 !text-sm !px-3.5 !py-1.5">Ditetapkan</span>
                         </div>
-                        <div class="mt-3 space-y-1.5">
-                            <div class="h-1.5 rounded-full bg-slate-100"><div class="h-full w-[88%] rounded-full bg-ink"></div></div>
-                            <div class="h-1.5 rounded-full bg-slate-100"><div class="h-full w-[64%] rounded-full bg-brand-600"></div></div>
+                        <div class="mt-4 space-y-2">
+                            <div class="h-2.5 rounded-full bg-slate-100"><div class="h-full w-[88%] rounded-full bg-ink"></div></div>
+                            <div class="h-2.5 rounded-full bg-slate-100"><div class="h-full w-[64%] rounded-full bg-brand-600"></div></div>
                         </div>
                     </div>
                 </div>

@@ -7,5 +7,6 @@
 - Verified locally: composer build, migrate, seed, optimize, FrankenPHP serve, /up 200, login POST → dashboard 200.
 - login.blade.php: brand + footer wrapped in max-w-[560px] mx-auto (all at same x).
 - Fix 2: GitHub push drops composer.lock & .env.example → Dockerfile no longer COPYs composer.lock; composer install resolves from composer.json. Verified with fresh clone of user's repo.
+- Login hero cards: enlarged inner text/badges/avatars/bars + container 620x560; Tailwind recompiled to public/css/app.css.
 ## Backlog
 - Real .xlsx export; Railway volume for uploads.
