@@ -10,5 +10,6 @@
 - Login hero cards: enlarged inner text/badges/avatars/bars + container 620x560; Tailwind recompiled to public/css/app.css.
 - Sidebar Master Data flyout: removed 12px hover gap (lg:left-full + lg:pl-4 bridge), 250ms close delay, aside lg:z-50. Tested 100% (iteration_3).
 - DB config: falls back DB_URL→MYSQL_URL→MYSQL_PUBLIC_URL→DATABASE_URL and MYSQLHOST/PORT/USER/PASSWORD/DATABASE (empty values skipped). Dockerfile CMD logs clear errors if DB/APP_KEY missing.
+- Railway: preDeploy migrations never ran → moved migrate (10x retry) + idempotent db:seed into Dockerfile CMD; removed preDeployCommand.
 ## Backlog
 - Real .xlsx export; Railway volume for uploads.
