@@ -97,17 +97,17 @@
         <div class="flex flex-1 gap-5 lg:gap-7 px-3 sm:px-6 lg:px-8 pb-4 pt-5">
             {{-- sidebar --}}
             <div x-show="nav" x-cloak x-transition.opacity class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[70] lg:hidden" @click="nav = false"></div>
-            <aside :class="nav ? 'translate-x-0' : '-translate-x-[120%] lg:translate-x-0'" class="fixed lg:relative left-3 top-3 bottom-3 z-[75] lg:z-40 lg:self-start w-64 lg:w-auto bg-white lg:bg-transparent rounded-[26px] p-4 lg:p-0 transition-transform duration-500 lg:transition-none shadow-2xl lg:shadow-none overflow-y-auto lg:overflow-visible" data-testid="sidebar">
+            <aside :class="nav ? 'translate-x-0' : '-translate-x-[120%] lg:translate-x-0'" class="fixed lg:relative left-3 top-3 bottom-3 z-[75] lg:z-50 lg:self-start w-64 lg:w-auto bg-white lg:bg-transparent rounded-[26px] p-4 lg:p-0 transition-transform duration-500 lg:transition-none shadow-2xl lg:shadow-none overflow-y-auto lg:overflow-visible" data-testid="sidebar">
                 <nav class="flex flex-col gap-2.5 lg:items-center lg:pt-1">
                     @foreach ($menu as $i => $m)
                         @php $active = $isActive($m); @endphp
                         @if (isset($m['children']))
-                            <div class="side-link {{ $active ? 'active' : '' }}" x-data="{ s: false }" @mouseenter="s = window.innerWidth >= 1024" @mouseleave="s = false">
+                            <div class="side-link {{ $active ? 'active' : '' }}" x-data="{ s: false, t: null }" @mouseenter="clearTimeout(t); s = window.innerWidth >= 1024" @mouseleave="if (window.innerWidth >= 1024) t = setTimeout(() => s = false, 250)">
                                 <button @click="s = !s" class="flex items-center gap-3 lg:gap-0 w-full lg:w-auto press" data-testid="nav-{{ $m['key'] }}">
                                     <span class="w-11 h-11 rounded-full grid place-items-center transition-colors duration-300 {{ $active ? 'bg-ink text-white shadow-lg' : 'bg-white text-slate-500 hover:text-ink border border-slate-200/70' }}"><i data-lucide="{{ $m['icon'] }}" class="w-[18px] h-[18px]"></i></span>
                                     <span class="lg:hidden text-sm font-medium">{{ $m['label'] }}</span>
                                 </button>
-                                <div x-show="s" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-x-2" x-transition:enter-end="opacity-100 translate-x-0" class="lg:absolute lg:left-[calc(100%+12px)] lg:top-0 z-[60] mt-2 lg:mt-0 lg:pl-1">
+                                <div x-show="s" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-x-2" x-transition:enter-end="opacity-100 translate-x-0" class="lg:absolute lg:left-full lg:-top-2 z-[60] mt-2 lg:mt-0 lg:pl-4 lg:py-2" data-testid="nav-{{ $m['key'] }}-flyout">
                                     <div class="lg:card lg:p-2 lg:w-56 flex flex-col">
                                         <span class="hidden lg:block px-3 pt-1 pb-2 eyebrow">{{ $m['label'] }}</span>
                                         @foreach ($m['children'] as $c)
