@@ -16,7 +16,7 @@
 <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="grain"></div>
 
 <div class="relative z-[2] min-h-screen flex p-3 sm:p-6 lg:p-10">
-    <div class="login-card w-full bg-white rounded-[30px] lg:rounded-[40px] p-3 lg:p-4 shadow-[0_40px_120px_-40px_rgba(15,23,42,.45)] grid lg:grid-cols-[1.15fr_1fr] gap-3 lg:gap-4 min-h-[calc(100vh-1.5rem)] sm:min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-5rem)]">
+    <div class="login-card w-full bg-white rounded-[30px] lg:rounded-[40px] p-3 lg:p-4 shadow-[0_40px_120px_-40px_rgba(15,23,42,.45)] grid lg:grid-cols-2 gap-3 lg:gap-4 min-h-[calc(100vh-1.5rem)] sm:min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-5rem)]">
 
         {{-- hero --}}
         <div class="hero-panel relative bg-ink rounded-[24px] lg:rounded-[30px] overflow-hidden min-h-[320px] hidden sm:block" data-testid="login-hero-panel">
