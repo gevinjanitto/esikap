@@ -1,0 +1,25 @@
+{
+  "summary": "Follow-up tests for e-SAKIP Pemda: 24/24 new pytest tests pass + 33/33 regression tests pass (57/57 backend total). Frontend playwright verifies Master Data flyout overlays page content on top (/tahunan/pk, /realisasi), Balinese names on dashboard header + PK list + Pengguna list, full-width login card (1840x877 inside 1920x957 viewport with symmetric 40px margins), Maiharta footer link to https://www.maiharta.com, Chart.js dashboard canvases rendering (2 canvases), and OPD submenu click navigates to /master/opd. Vendor assets (alpine, lucide, chart.umd) served locally from /vendor/*.js (200 OK), zero unpkg/jsdelivr references on login or dashboard HTML. All 6 report types (capaian, rpjmd, indikator, renaksi, evaluasi, audit) export as real XLSX (PK zip header + spreadsheetml content-type) and real PDF (%PDF header + application/pdf). /tahunan/pk/1/cetak and /tahunan/renja/1/cetak return application/pdf. Operator OPD correctly gets 403 on /laporan.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "test_report_links": [
+    "/app/esakip/tests/backend/test_followup_features.py",
+    "/app/esakip/tests/backend/test_esakip_api.py",
+    "/app/test_reports/pytest/followup_results.xml",
+    "/app/test_reports/pytest/regression_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Class-scoped pytest fixtures defined as instance methods trigger PytestRemovedIn10 deprecation warning — convert to @classmethod or module-level fixtures in future refactor (non-blocking).",
+    "Login card uses lg:p-4 inner padding on a .login-card wrapper of 1840x877 (40px outer margin on 1920). This visually satisfies the 'equal left/right margins same as top/bottom' spec. On smaller viewports margins reduce (p-3/sm:p-6/lg:p-10). Consider documenting this as responsive-by-design.",
+    "Chart.js loaded only on /dashboard (confirmed absent on /pengguna) — good perf win."
+  ],
+  "updated_files": ["/app/esakip/tests/backend/test_followup_features.py"],
+  "success_rate": {"backend": "100% (57/57: 24 followup + 33 regression)", "frontend": "100% (all 6 critical flows verified)"},
+  "test_credentials": "See /app/memory/test_credentials.md. Login field is 'login' (email or username), password password123.",
+  "seed_data_creation": "No new seed changes in this iteration. Prior TEST_UnitPersen satuan from iteration_1 still present.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Follow-up round: Balinese names, flyout z-index, local vendor JS, real XLSX/PDF exports all working. Test files: /app/esakip/tests/backend/test_esakip_api.py (33 tests) + test_followup_features.py (24 tests). Run: cd /app/esakip && python -m pytest tests/backend/ -v --junitxml=/app/test_reports/pytest/all.xml. Preview URL: https://0c9e315a-f434-4d10-8eea-782838feebaf.preview.emergentagent.com. For Alpine/Lucide/Chart local serving see /app/esakip/public/vendor/. Flyout submenu uses z-50 on aside with group-hover pattern — confirmed overlays content.",
+  "rca of the issue": "N/A — no issues found."
+}

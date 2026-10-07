@@ -1,0 +1,150 @@
+{
+  "project_metadata": {
+    "name": "e-SAKIP Pemerintah Daerah",
+    "version": "2.0.0",
+    "tagline": "Sistem Akuntabilitas Kinerja Instansi Pemerintah Daerah",
+    "primary_language": "id",
+    "target_stack": {
+      "framework": "Laravel 11 Blade Templates",
+      "css": "Tailwind CSS v3.4+",
+      "javascript": "Alpine.js v3.x",
+      "charts": "Chart.js v4.x",
+      "icons": "Lucide Icons (SVG / CDN) or Heroicons"
+    },
+    "mandatory_footer": {
+      "text": "Design & Develop by MaiHarta",
+      "link_text": "MaiHarta",
+      "url": "https://www.maiharta.com",
+      "tailwind_classes": "text-xs text-slate-400 font-medium py-4 text-center tracking-wide hover:text-red-500 transition-colors"
+    }
+  },
+  "design_archetype": {
+    "style": "Modern Neomorphic Glass & Tactical Crimson Accent",
+    "concept": "Panze Studio-inspired floating frosted dashboard card resting on a deep slate gradient aura, paired with Bytespace-inspired dual-panel 3D login hero. Crisp high-contrast red accents (#E63946 / #DC2626) to emphasize government authority, precision performance metrics, and modern Indonesian civic identity.",
+    "theme_mode": "Light Dashboard Floating Container with Soft Ambient Dark/Indigo Outer Wallpaper"
+  },
+  "color_palette": {
+    "primary_red": {
+      "50": "#FEF2F2",
+      "100": "#FEE2E2",
+      "200": "#FECACA",
+      "500": "#EF4444",
+      "600": "#DC2626",
+      "700": "#B91C1C",
+      "900": "#7F1D1D",
+      "accent_crimson": "#E63946",
+      "accent_glow": "rgba(230, 57, 70, 0.25)"
+    },
+    "neutrals": {
+      "canvas_bg": "#EEF2F6",
+      "canvas_gradient": "linear-gradient(135deg, #E2E8F0 0%, #DBEFEF 40%, #E0E7FF 100%)",
+      "card_bg": "#FFFFFF",
+      "card_subtle": "#F8FAFC",
+      "dark_hero": "#0F172A",
+      "dark_hero_card": "#1E293B",
+      "text_main": "#0F172A",
+      "text_muted": "#64748B",
+      "border_light": "#E2E8F0",
+      "border_dark": "#334155"
+    },
+    "status_indicators": {
+      "tercapai": {
+        "bg": "#ECFDF5",
+        "text": "#047857",
+        "badge": "bg-emerald-50 text-emerald-700 border-emerald-200"
+      },
+      "perlu_perhatian": {
+        "bg": "#FFFBEB",
+        "text": "#B45309",
+        "badge": "bg-amber-50 text-amber-700 border-amber-200"
+      },
+      "tidak_tercapai": {
+        "bg": "#FEF2F2",
+        "text": "#B91C1C",
+        "badge": "bg-red-50 text-red-700 border-red-200"
+      },
+      "approval_badges": {
+        "draft": "bg-slate-100 text-slate-700 border-slate-200",
+        "diajukan": "bg-sky-50 text-sky-700 border-sky-200",
+        "revisi": "bg-amber-50 text-amber-700 border-amber-200",
+        "disetujui": "bg-emerald-50 text-emerald-700 border-emerald-200",
+        "ditetapkan": "bg-indigo-50 text-indigo-700 border-indigo-200 shadow-sm",
+        "ditolak": "bg-rose-50 text-rose-700 border-rose-200"
+      }
+    }
+  },
+  "typography": {
+    "font_family_heading": "Plus Jakarta Sans, sans-serif",
+    "font_family_body": "Plus Jakarta Sans, sans-serif",
+    "google_font_url": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap",
+    "hierarchy": {
+      "h1_hero": "text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-none",
+      "h2_section": "text-2xl sm:text-3xl font-bold tracking-tight text-slate-900",
+      "h3_card": "text-lg sm:text-xl font-semibold text-slate-800",
+      "subtitle": "text-xs font-semibold uppercase tracking-widest text-red-600",
+      "body": "text-sm text-slate-600 leading-relaxed",
+      "label": "text-xs font-medium text-slate-500"
+    }
+  },
+  "layout_structures": {
+    "dashboard_container": {
+      "outer_wrapper": "min-h-screen bg-gradient-to-br from-slate-200 via-slate-100 to-indigo-100 p-3 sm:p-6 lg:p-8 flex items-center justify-center font-sans antialiased",
+      "inner_card": "w-full max-w-[1600px] bg-white/90 backdrop-blur-2xl rounded-[28px] shadow-[0_20px_60px_-15px_rgba(15,23,42,0.12)] border border-white/60 p-4 sm:p-6 lg:p-8 flex flex-col md:flex-row gap-6 min-h-[880px]"
+    },
+    "sidebar": {
+      "wrapper": "w-full md:w-20 lg:w-24 bg-slate-900 rounded-[22px] p-4 flex md:flex-col items-center justify-between shadow-xl shrink-0",
+      "active_icon": "w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg shadow-red-600/30 transition-all duration-300 scale-105",
+      "inactive_icon": "w-12 h-12 rounded-full bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white flex items-center justify-center transition-all duration-200"
+    },
+    "header_nav": {
+      "segmented_tabs_container": "inline-flex p-1.5 bg-slate-100/80 rounded-full border border-slate-200/60 shadow-inner",
+      "tab_active": "px-5 py-2 rounded-full bg-slate-900 text-white text-xs font-semibold shadow-md transition-all duration-300",
+      "tab_inactive": "px-5 py-2 rounded-full text-slate-600 text-xs font-semibold hover:text-slate-900 transition-all duration-200",
+      "user_profile_pill": "flex items-center gap-3 bg-slate-50 border border-slate-200/80 pl-2 pr-4 py-1.5 rounded-full shadow-sm"
+    },
+    "login_page": {
+      "wrapper": "min-h-screen bg-slate-950 flex items-center justify-center p-4 sm:p-8 font-sans",
+      "container": "w-full max-w-5xl bg-slate-900 rounded-[32px] overflow-hidden border border-slate-800 shadow-[0_25px_70px_rgba(0,0,0,0.5)] grid grid-cols-1 md:grid-cols-12 min-h-[640px]",
+      "left_hero_panel": "md:col-span-5 bg-gradient-to-br from-red-600 via-red-700 to-slate-900 p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden text-white",
+      "right_form_panel": "md:col-span-7 bg-white p-8 sm:p-12 flex flex-col justify-between"
+    }
+  },
+  "animation_guidelines": {
+    "engine": "Alpine.js x-transition & CSS keyframe utility classes",
+    "page_load_hero": {
+      "modal_slide_in": "transition-all ease-out duration-500 transform translate-x-0 opacity-100",
+      "stagger_delay_elements": "0ms headline, 100ms inputs, 200ms submit button",
+      "backdrop_blur": "backdrop-blur-md bg-slate-900/40"
+    },
+    "custom_css_keyframes": {
+      "fadeInUp": "@keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }",
+      "floatSlow": "@keyframes floatSlow { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }"
+    }
+  },
+  "image_urls": {
+    "user_avatars": [
+      {
+        "url": "https://images.unsplash.com/photo-1767615792114-f30422379aaf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwyfHxpbmRvbmVzaWFuJTIwZ292ZXJubWVudCUyMG9mZmljZXIlMjBhdmF0YXIlMjBwb3J0cmFpdHxlbnwwfHx8fDE3OTEzNTIxOTl8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Indonesian official avatar female with black hijab and white formal uniform",
+        "category": "user_avatar_female"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1731363106135-83fb05b5accb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHw0fHxpbmRvbmVzaWFuJTIwZ292ZXJubWVudCUyMG9mZmljZXIlMjBhdmF0YXIlMjBwb3J0cmFpdHxlbnwwfHx8fDE3OTEzNTIxOTl8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Indonesian government male officer avatar in uniform",
+        "category": "user_avatar_male"
+      }
+    ],
+    "login_hero_graphics": [
+      {
+        "url": "https://images.unsplash.com/photo-1499382926300-90a93d2d9990?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjbGVhbiUyMGFyY2hpdGVjdHVyZSUyMHJlZCUyMGFjY2VudCUyMDNkJTIwYWJzdHJhY3Rpb258ZW58MHx8fHwxNzkxMzUyMTk5fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Red curved architectural panels 3D visual for login hero banner background",
+        "category": "login_3d_hero"
+      }
+    ]
+  },
+  "universal_guidelines": {
+    "data_testid": "ALL interactive components, inputs, links, buttons, table headers, filter badges, and charts MUST include data-testid attribute in kebab-case format (e.g., data-testid='login-submit-button', data-testid='kpi-capaian-donut-chart', data-testid='filter-periode-select').",
+    "accessibility": "Ensure min 4.5:1 text contrast. Primary action buttons must use red shadow glows, clear focus rings (focus:ring-2 focus:ring-red-500 focus:outline-none).",
+    "footer": "Include Design & Develop by MaiHarta linking to https://www.maiharta.com in all footers."
+  }
+}

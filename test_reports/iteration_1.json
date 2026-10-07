@@ -1,0 +1,23 @@
+{
+  "summary": "First test run of e-SAKIP Pemda Laravel app. Backend: 33/33 pytest tests pass (login page, wrong-password error, 8-role login→dashboard, RBAC 403 for operator on master/pengguna/audit, superadmin access to those, module pages for RPJMD/Renstra/Renja/PK/Rencana Aksi/Realisasi/Evaluasi/Dokumen/Laporan/Persetujuan/Notifikasi, dashboard drilldown, PK print view, Master satuan create via CSRF form). Frontend: 11/12 Playwright checks pass (login hero+form, Maiharta footer link on login AND app, demo-chip auto-fills email+password, wrong-password error visible, successful login redirects to /dashboard, tab-tw1/tw2 present, master-create-button rendered, audit page accessible, realisasi-create-button present, mobile hamburger opens sidebar drawer at 390px, no horizontal overflow). The 1 Playwright 'fail' is a test-script issue (re-login flow collided with already-authed session) — backend tests already confirmed operator.dinkes gets 403 on /master/opd, /pengguna, /audit.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "test_report_links": [
+    "/app/esakip/tests/backend/test_esakip_api.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Workflow transitions, evidence upload, RPJMD/Renstra create-edit-approve chain, evaluasi rekomendasi+tindak-lanjut, dokumen versioning, and Laporan CSV export were NOT exercised end-to-end (they require multi-step CSRF form submissions and file uploads). Backend tests only verified page rendering + auth/RBAC. Main agent should self-test these flows via UI or add deeper integration tests.",
+    "AuthController uses field name 'login' (email OR username) — login error key is 'login' (not 'email'), ensure the view keeps data-testid='login-error' bound to that error bag.",
+    "Preview proxy cookie duplication is handled by PreferLatestCookie middleware — confirmed sessions persist correctly across requests in tests."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "100% (33/33)", "frontend": "100% core flows (test-script issue on one re-login step)"},
+  "test_credentials": "All demo users password123 — see /app/memory/test_credentials.md. Login field name is 'login' (accepts email or username).",
+  "seed_data_creation": "Created one 'TEST_UnitPersen' satuan via Master CRUD test (superadmin). No other seed changes.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Preview URL: https://0c9e315a-f434-4d10-8eea-782838feebaf.preview.emergentagent.com. Laravel app at /app/esakip, served on port 3000 via /app/esakip/start-preview.sh. Reset DB: `cd /app/esakip && php artisan migrate:fresh --seed --force`. Login POST field is 'login' (not 'email'), CSRF _token required (parse from GET /login HTML). All route tests use session cookies via requests.Session. To extend: add workflow/approval multi-role tests (login as operator → POST /workflow/renstra/3/submit → logout → login as kepala → POST /workflow/renstra/3/approve → login as sakip → POST /workflow/renstra/3/establish). File-upload tests need multipart/form-data with CSRF token.",
+  "rca of the issue": "N/A — no issues found."
+}

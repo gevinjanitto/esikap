@@ -1,0 +1,16 @@
+.git
+.emergent
+backend
+frontend
+memory
+tests
+test_reports
+node_modules
+esakip/vendor
+esakip/node_modules
+esakip/.env
+esakip/storage/logs/*.log
+esakip/storage/framework/cache/data/*
+esakip/storage/framework/sessions/*
+esakip/storage/framework/views/*
+esakip/bootstrap/cache/*.php
